@@ -1,0 +1,16 @@
+node_modules/
+private/
+dist/
+test-results/
+extension/local-profile-preset.js
+scripts/seed-private.mjs
+scripts/seed-versions.mjs
+scripts/update-role-content.mjs
+tests/family-profile.test.mjs
+tests/project-alias-profile.test.mjs
+tests/local-preset-browser.mjs
+.env
+.env.*
+*.log
+*.crx
+*.pem

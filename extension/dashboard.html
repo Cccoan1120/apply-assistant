@@ -1,0 +1,25 @@
+<!doctype html><html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>资料面板 · 网申助手</title><link rel="stylesheet" href="panel.css"><link rel="stylesheet" href="dashboard.css"></head>
+<body class="dashboard">
+  <aside class="sidebar">
+    <a class="brand" href="dashboard.html"><img src="icons/icon48.png" width="30" height="30" alt=""><span>网申助手</span></a>
+    <div class="rail-heading"><h2>投递版本</h2><button id="new-version" class="icon" aria-label="新增版本" title="新增版本"><i data-lucide="plus"></i></button></div>
+    <div id="version-list" class="version-list"></div>
+    <div class="rail-heading module-heading"><h2>资料模块</h2><button id="add-module" class="icon" aria-label="新增模块" title="新增模块"><i data-lucide="plus"></i></button></div>
+    <div id="module-list" class="module-list" aria-label="资料模块"></div>
+    <div class="rail-footer"><span id="storage-label">本地资料</span><div class="tools"><button id="import-data" class="icon" aria-label="导入资料" title="导入资料"><i data-lucide="upload"></i></button><button id="export-data" class="icon" aria-label="导出当前版本" title="导出当前版本"><i data-lucide="download"></i></button><button id="export-all" class="icon" aria-label="备份全部版本" title="备份全部版本"><i data-lucide="archive"></i></button></div></div>
+    <input id="import-file" type="file" accept=".json,application/json" hidden>
+  </aside>
+  <div class="workspace">
+    <div id="preview-notice" class="preview-notice" hidden><strong>网页预览资料 · 未同步插件</strong><span>此页修改仅保存在当前浏览器网页中。网申填写使用插件资料面板中的版本。</span></div>
+    <header class="workspace-header"><div class="version-heading"><h1 id="version-title"></h1><p id="version-target"></p></div><div class="header-actions"><button id="edit-version" class="icon" aria-label="编辑版本名称与岗位" title="编辑版本名称与岗位"><i data-lucide="pencil"></i></button><button id="duplicate-version"><i data-lucide="copy-plus"></i>复制版本</button><button id="delete-version" class="icon" aria-label="删除当前版本" title="删除当前版本"><i data-lucide="trash-2"></i></button></div></header>
+    <div id="conflict" class="conflict" hidden><span>另一个窗口已更新资料，当前编辑尚未保存。</span><button id="reload-data">载入最新资料</button></div>
+    <main class="workspace-main">
+      <div class="module-title-row"><div><h2 id="module-title"></h2><p id="module-count" class="muted"></p></div><div class="tools"><button id="edit-module" class="icon" aria-label="重命名模块" title="重命名模块"><i data-lucide="pencil"></i></button><button id="delete-module" class="icon" aria-label="删除模块" title="删除模块"><i data-lucide="trash-2"></i></button><button id="add-field"><i data-lucide="list-plus"></i>添加字段</button><button id="add-entry" class="primary"><i data-lucide="plus"></i>新增经历</button></div></div>
+      <div id="entry-list"></div>
+    </main>
+    <footer class="save-bar"><p id="status" role="status" aria-live="polite"></p><button id="save-data" class="primary"><i data-lucide="save"></i>保存版本</button></footer>
+  </div>
+  <dialog id="edit-dialog"><form id="dialog-form"><div class="dialog-heading"><h2 id="dialog-title"></h2><button type="button" id="dialog-close" class="icon" aria-label="关闭" title="关闭"><i data-lucide="x"></i></button></div><div id="dialog-fields"></div><p id="dialog-error" role="alert"></p><div class="dialog-actions"><button type="button" id="dialog-cancel">取消</button><button type="submit" class="primary">确定</button></div></form></dialog>
+  <script src="vendor/lucide.js"></script><script type="module" src="dashboard.js"></script>
+</body></html>

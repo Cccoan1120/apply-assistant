@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "网申助手",
+  "version": "0.6.24",
+  "description": "个人网申资料库与表单填入助手，优先支持北森、Moka、飞书招聘的常见字段。",
+  "permissions": ["activeTab", "scripting", "storage", "sidePanel"],
+  "host_permissions": ["https://zhaopin.liby.com.cn/*", "https://zhaopin.deppon.com/*", "https://campushr.hikvision.com/*", "https://campus.boe.com/*", "https://*.mokahr.com/*", "https://*.hotjob.cn/*", "https://*.italent.cn/*", "https://*.beisen.com/*", "https://*.zhiye.com/*", "https://*.feishu.cn/*", "https://*.larkoffice.com/*", "https://*.larksuite.com/*"],
+  "content_scripts": [{
+    "matches": ["https://zhaopin.liby.com.cn/*", "https://zhaopin.deppon.com/*", "https://campushr.hikvision.com/*", "https://campus.boe.com/*", "https://*.mokahr.com/*", "https://*.hotjob.cn/*", "https://*.italent.cn/*", "https://*.beisen.com/*", "https://*.zhiye.com/*", "https://*.feishu.cn/*", "https://*.larkoffice.com/*", "https://*.larksuite.com/*"],
+    "js": ["vendor/lucide.js", "launcher.js"],
+    "run_at": "document_idle"
+  }],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_title": "打开网申助手" },
+  "side_panel": { "default_path": "panel.html" },
+  "options_page": "dashboard.html",
+  "icons": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "content_security_policy": { "extension_pages": "script-src 'self'; object-src 'none'; connect-src 'none'" }
+}

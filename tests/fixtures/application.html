@@ -1,0 +1,18 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>网申表单测试样例</title><style>body{font:15px/1.7 "Segoe UI","Microsoft YaHei",sans-serif;color:#20252c;background:#f4f6f8;max-width:650px;margin:30px auto;padding:0 20px}h1{font-size:24px}fieldset{border:0;border-top:1px solid #dce1e7;margin:24px 0;padding:16px 0}legend{font-weight:600}label,.ant-form-item,.atsx-form-item,.FormItem-root{display:grid;gap:5px;margin:12px 0}input,textarea,select{font:inherit;border:1px solid #c8ced7;padding:10px;border-radius:4px;background:white;width:100%;box-sizing:border-box}textarea{height:100px}button{padding:10px 20px}</style></head><body>
+<h1>网申表单测试样例</h1><p>以下为虚构测试表单。</p>
+<form><fieldset><legend>个人信息</legend>
+<div class="ant-form-item"><div class="ant-form-item-label">姓名</div><input id="candidate"></div>
+<div class="atsx-form-item"><div class="atsx-label">手机号码</div><input id="phone" type="tel"></div>
+<div class="FormItem-root"><div class="FormItem-label">电子邮箱</div><input id="email" type="email"></div>
+<label>性别<select id="gender"><option value="">请选择</option><option value="male">男</option><option value="female">女</option></select></label>
+<label>现居城市<input id="city" role="combobox" readonly></label>
+<label>自我评价<textarea id="summary" maxlength="10"></textarea></label>
+<label for="name">紧急联系人姓名</label><input id="name">
+<label>个人主页<input id="website" value="https://existing.example"></label>
+<label>验证码<input id="captcha"></label>
+</fieldset>
+<fieldset><legend>实习经历 1</legend><label>公司名称<input id="company1"></label><label>职位名称<input id="role1"></label><label>开始时间<input id="start1" type="month"></label><label>结束时间<input id="end1" type="date"></label><label>工作内容<textarea id="description1"></textarea></label></fieldset>
+<fieldset><legend>实习经历 2</legend><label>公司名称<input id="company2"></label><label>工作内容<textarea id="description2"></textarea></label></fieldset>
+<button type="submit">提交申请</button></form>
+<script>window.submitCount=0;document.querySelector('form').addEventListener('submit',e=>{e.preventDefault();window.submitCount++})</script>
+</body></html>

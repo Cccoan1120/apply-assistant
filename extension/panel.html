@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>网申助手</title><link rel="stylesheet" href="panel.css"></head>
+<body>
+  <header><div class="brand"><img src="icons/icon48.png" alt="" width="28" height="28"><h1>网申助手</h1></div><button id="manage" class="icon" title="打开资料面板" aria-label="打开资料面板"><i data-lucide="square-arrow-out-up-right"></i></button></header>
+  <main><section id="fill-view">
+    <label>投递版本<select id="fill-version"></select></label><p id="version-target" class="muted"></p>
+    <div class="section-heading"><h2>本次填写</h2><button id="undo" class="icon" title="撤销本页填入" aria-label="撤销本页填入"><i data-lucide="undo-2"></i></button></div>
+    <div class="modes" role="group" aria-label="填写模式"><button id="mode-auto" aria-pressed="true">整页自动</button><button id="mode-manual" aria-pressed="false">逐项调整</button></div>
+    <div id="manual-selectors" class="selectors" hidden><label>资料模块<select id="fill-group"></select></label><label id="entry-label">选择经历<select id="fill-entry"></select></label></div>
+    <button id="auto-fill" class="primary wide"><i data-lucide="wand-sparkles"></i>一键填写当前页</button>
+    <button id="scan" class="wide"><i data-lucide="scan-line"></i><span>预览整页匹配</span></button>
+    <button id="replace-differences" class="wide" hidden><i data-lucide="replace"></i><span>按当前模板更新差异</span></button>
+    <div class="section-heading preview-heading"><h2>字段预览 <span id="count">0</span></h2><span id="platform">未识别</span></div><p id="page" class="muted"></p>
+    <div id="rows"><div class="empty"><i data-lucide="text-cursor-input"></i><p>暂无识别结果</p></div></div>
+    <footer id="manual-actions" hidden><label class="check"><input id="select-all" type="checkbox">选择可填字段</label><button id="apply" class="primary" disabled><i data-lucide="check"></i><span>填入所选</span></button></footer>
+  </section><button id="stop-auto" class="wide" hidden><i data-lucide="square"></i>停止填写</button><p id="status" role="status" aria-live="polite"></p></main>
+  <script src="vendor/lucide.js"></script><script type="module" src="panel.js"></script>
+</body></html>
